@@ -1,0 +1,44 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: var(--header-height);
+  transition: margin-left var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevents flex items from breaking grid widths */
+}
+
+/* Sidebar margin adjustments */
+.main-content.sidebar-expanded {
+  margin-left: var(--sidebar-width);
+}
+
+.main-content.sidebar-collapsed-spacing {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+.page-wrapper-inner {
+  padding: 16px;
+  width: 100%;
+  flex: 1;
+}
+
+/* Watch Page Specific Layout adjustments (e.g. sidebar collapse defaults on watch page) */
+@media (max-width: 1000px) {
+  .main-content.sidebar-expanded,
+  .main-content.sidebar-collapsed-spacing {
+    margin-left: 0 !important;
+  }
+}

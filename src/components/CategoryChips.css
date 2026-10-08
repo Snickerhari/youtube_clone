@@ -1,0 +1,42 @@
+.category-chips-wrapper {
+  background-color: var(--bg-primary);
+  padding: 12px 24px;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 90;
+  width: 100%;
+}
+
+.category-chips-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbars for Firefox */
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-chips-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbars for Chrome/Safari */
+}
+
+.category-chip {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.category-chip:hover {
+  background-color: var(--bg-active);
+}
+
+.category-chip.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-weight: 500;
+}
